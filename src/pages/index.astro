@@ -1,4 +1,6 @@
 ---
+import BackToTopButton from "../components/BackToTopButton.astro";
+import Curtain from "../components/Curtain.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
@@ -6,17 +8,9 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Welcome Astro.">
   <main id="primary" class="site-main">
-    <section class="sk__master-curtain">
-      <div class="mcurtain mcurtain-left"></div>
-      <div class="mcurtain mcurtain-center"></div>
-      <div class="mcurtain mcurtain-right"></div>
-    </section>
+    <Curtain />
     <!-- Back to top button -->
-    <div class="sk__back-to-top-wrap">
-      <a class="sk__back-to-top" href="index.html#smooth-content"
-        ><span class="sk__back-to-top"></span></a
-      >
-    </div>
+    <BackToTopButton />
     <!-- Navigation Menu
 					  ================================================== -->
     <Header />
@@ -307,8 +301,6 @@ import Layout from "../layouts/Layout.astro";
                 src="/wp-content/themes/bossnailspanorman/assets/images/right-arrow.webp"
               />
             </button>
-            <div class="bg-flower-left1"></div>
-            <div class="bg-flower-right1"></div>
           </div>
           <!-- /#sk__hero-carousel-slider -->
         </section>
