@@ -10654,7 +10654,7 @@ a.sk__gallery-nav-link:focus {
     }
     .sk__mobile-main-logo img {
         width: 100%;
-        max-width: 150px;
+        max-width: 200px;
     }
     h3 strong {
         font-size: 100px;
@@ -11355,7 +11355,7 @@ h2.h2-super.theme-preview-hero-h2 {
 }
 @media all and (max-width: 320px) { 
 	.sk__mobile-main-logo img {
-        max-width: 110px;
+        max-width: 200px;
     }
     .about-img-three .sub-img img {
         max-width: 120px;
