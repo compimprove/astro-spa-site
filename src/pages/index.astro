@@ -3,6 +3,7 @@ import BackToTopButton from "../components/BackToTopButton.astro";
 import Curtain from "../components/Curtain.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import PortfolioItem from "../components/PortfolioItem.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -283,13 +284,12 @@ import Layout from "../layouts/Layout.astro";
                                 >
                                   <div class="about-img-three mr-20">
                                     <div class="about2">
-                                      <img
-                                        decoding="async"
-                                        src="/nail.png"
-                                      />
+                                      <img decoding="async" src="/nail.png" />
                                     </div>
                                     <div class="sub-img">
                                       <img
+                                        width="250"
+                                        height="250"
                                         decoding="async"
                                         src="/hand-star.png"
                                         alt="About"
@@ -512,7 +512,7 @@ import Layout from "../layouts/Layout.astro";
                         </section> -->
                         <!-- Featured Project Section
 														  ================================================== -->
-                        <!-- <section
+                        <section
                           class="sk__featured-project-section sk__parallax-background-section dark-shade-2-bg sk__flex"
                         >
                           <div
@@ -557,7 +557,7 @@ import Layout from "../layouts/Layout.astro";
                               </div>
                             </div>
                           </div>
-                        </section> -->
+                        </section>
                         <!-- /.sk__featured-project-section -->
                         <!-- <div class="featured-project-padder"></div> -->
                         <!-- Laptop Section
@@ -584,141 +584,31 @@ import Layout from "../layouts/Layout.astro";
                                 class="col sk__portfolio-thumbs px-sm-3 px-md-5"
                               >
                                 <div class="sk__portfolio-wrapper text-center">
-                                  <!-- <div class="sk__portfolio-item">
-                                    <a
-                                      href="gallery.html"
-                                      class="sk__portfolio-thumblink"
-                                    >
-                                      <div class="sk__pt-link-icon">
-                                        <div class="sk__pt-link-icon-ovr-1">
-                                        </div>
-                                        <div class="sk__pt-link-icon-ovr-2">
-                                        </div>
-                                      </div>
-                                      <div
-                                        class="sk__portfolio-thumblink-image sk__image-back-cover"
-                                        style="
-												  background-image: url('/wp-content/themes/bossnailspanorman/assets/images/portfolio/1.webp');
-												"
-                                      >
-                                      </div>
-                                      <div class="portfolio-thumb-info">
-                                        <h6>LAVISH NAIL</h6>
-                                        <h4 class="h4-small">
-                                          The joy of Best Nail
-                                        </h4>
-                                        <p>Our Gallery</p>
-                                      </div>
-                                    </a>
-                                  </div> -->
-                                  <div class="sk__portfolio-item">
-                                    <a
-                                      href="gallery.html"
-                                      class="sk__portfolio-thumblink"
-                                    >
-                                      <div class="sk__pt-link-icon">
-                                        <div class="sk__pt-link-icon-ovr-1">
-                                        </div>
-                                        <div class="sk__pt-link-icon-ovr-2">
-                                        </div>
-                                      </div>
-                                      <div
-                                        class="sk__portfolio-thumblink-image sk__image-back-cover"
-                                        style="
-												  background-image: url('/wp-content/themes/bossnailspanorman/assets/images/portfolio/2.webp');
-												"
-                                      >
-                                      </div>
-                                      <div class="portfolio-thumb-info">
-                                        <h6>LAVISH NAIL</h6>
-                                        <h4 class="h4-small">
-                                          The joy of Best Nail
-                                        </h4>
-                                        <p>Our Gallery</p>
-                                      </div>
-                                    </a>
-                                  </div>
-                                  <div class="sk__portfolio-item">
-                                    <a
-                                      href="gallery.html"
-                                      class="sk__portfolio-thumblink"
-                                    >
-                                      <div class="sk__pt-link-icon">
-                                        <div class="sk__pt-link-icon-ovr-1">
-                                        </div>
-                                        <div class="sk__pt-link-icon-ovr-2">
-                                        </div>
-                                      </div>
-                                      <div
-                                        class="sk__portfolio-thumblink-image sk__image-back-cover"
-                                        style="
-												  background-image: url('/wp-content/themes/bossnailspanorman/assets/images/portfolio/3.webp');
-												"
-                                      >
-                                      </div>
-                                      <div class="portfolio-thumb-info">
-                                        <h6>LAVISH NAIL</h6>
-                                        <h4 class="h4-small">
-                                          The joy of Best Nail
-                                        </h4>
-                                        <p>Our Gallery</p>
-                                      </div>
-                                    </a>
-                                  </div>
-                                  <div class="sk__portfolio-item">
-                                    <a
-                                      href="gallery.html"
-                                      class="sk__portfolio-thumblink"
-                                    >
-                                      <div class="sk__pt-link-icon">
-                                        <div class="sk__pt-link-icon-ovr-1">
-                                        </div>
-                                        <div class="sk__pt-link-icon-ovr-2">
-                                        </div>
-                                      </div>
-                                      <div
-                                        class="sk__portfolio-thumblink-image sk__image-back-cover"
-                                        style="
-												  background-image: url('/wp-content/themes/bossnailspanorman/assets/images/portfolio/4.webp');
-												"
-                                      >
-                                      </div>
-                                      <div class="portfolio-thumb-info">
-                                        <h6>LAVISH NAIL</h6>
-                                        <h4 class="h4-small">
-                                          The joy of Best Nail
-                                        </h4>
-                                        <p>Our Gallery</p>
-                                      </div>
-                                    </a>
-                                  </div>
-                                  <div class="sk__portfolio-item">
-                                    <a
-                                      href="gallery.html"
-                                      class="sk__portfolio-thumblink"
-                                    >
-                                      <div class="sk__pt-link-icon">
-                                        <div class="sk__pt-link-icon-ovr-1">
-                                        </div>
-                                        <div class="sk__pt-link-icon-ovr-2">
-                                        </div>
-                                      </div>
-                                      <div
-                                        class="sk__portfolio-thumblink-image sk__image-back-cover"
-                                        style="
-												  background-image: url('/wp-content/themes/bossnailspanorman/assets/images/portfolio/5.webp');
-												"
-                                      >
-                                      </div>
-                                      <div class="portfolio-thumb-info">
-                                        <h6>LAVISH NAIL</h6>
-                                        <h4 class="h4-small">
-                                          The joy of Best Nail
-                                        </h4>
-                                        <p>Our Gallery</p>
-                                      </div>
-                                    </a>
-                                  </div>
+                                  <PortfolioItem
+                                    title="LAVISH NAIL"
+                                    subTitle="The joy of Best Nail"
+                                    image="/portfolio/1.png"
+                                  />
+                                  <PortfolioItem
+                                    title="LAVISH NAIL"
+                                    subTitle="The joy of Best Nail"
+                                    image="/portfolio/2.png"
+                                  />
+                                  <PortfolioItem
+                                    title="LAVISH NAIL"
+                                    subTitle="The joy of Best Nail"
+                                    image="/portfolio/3.png"
+                                  />
+                                  <PortfolioItem
+                                    title="LAVISH NAIL"
+                                    subTitle="The joy of Best Nail"
+                                    image="/portfolio/4.png"
+                                  />
+                                  <PortfolioItem
+                                    title="LAVISH NAIL"
+                                    subTitle="The joy of Best Nail"
+                                    image="/portfolio/5.png"
+                                  />
                                   <!--End-->
                                 </div>
                               </div>

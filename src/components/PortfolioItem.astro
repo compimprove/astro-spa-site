@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+  subTitle: string;
+  image: string;
+}
+let { title, subTitle, image } = Astro.props;
+---
+
+<div class="sk__portfolio-item">
+  <a href="gallery.html" class="sk__portfolio-thumblink">
+    <div class="sk__pt-link-icon">
+      <div class="sk__pt-link-icon-ovr-1"></div>
+      <div class="sk__pt-link-icon-ovr-2"></div>
+    </div>
+    <div
+      class="sk__portfolio-thumblink-image sk__image-back-cover"
+      style={`background-image: url(${image});`}
+    >
+    </div>
+    <div class="portfolio-thumb-info">
+      <h6>{title}</h6>
+      <h4 class="h4-small">{subTitle}</h4>
+      <p>Our Gallery</p>
+    </div>
+  </a>
+</div>
