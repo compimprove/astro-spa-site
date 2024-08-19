@@ -9070,7 +9070,7 @@ section.sk__parallax-background-section.sk__contact-us {
 .sk__rectangles-full-left {
   position: relative;
   max-width: 100%;
-  width: 780px;
+  width: 600px;
   padding: 110px;
   background: url(../images/bg-party.webp) 0px 0px no-repeat;
   background-size: cover;
@@ -9956,7 +9956,7 @@ footer.sk__footer-simple.sk__footer-simple-fixed {
     font-size: 52px;
   }
   .sk__featured-project-section .sk__parallax-background-element {
-    background: url(../images/party-mb.webp) center bottom no-repeat;
+    background: url(/party.jpg) center bottom no-repeat;
     background-size: cover;
   }
   .about-img-three .content {

@@ -1,0 +1,30 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+}
+let { title, description, image, link } = Astro.props;
+---
+
+<div class="sk__iconbox-services1">
+  <div class="sk__iconbox">
+    <a class="services_home" href={link}>
+      <img decoding="async" src={image} />
+    </a>
+    <a class="sk__iconbox-text-link gradient-links-bright" href={link}>
+      <h5>{title}</h5>
+    </a>
+    <div>
+      <img
+        decoding="async"
+        src="/wp-content/themes/bossnailspanorman/assets/images/services-home/line-home.png"
+      />
+    </div>
+    <p>
+      {description}
+    </p>
+    <a class="btn btn-outline-gold" href={link} role="button">Our Services</a>
+  </div>
+</div>

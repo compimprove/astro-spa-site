@@ -1,0 +1,43 @@
+---
+interface Props {
+  id: number;
+  title: string;
+  image: string;
+  imageMobile?: string;
+}
+let { id, title, image, imageMobile } = Astro.props;
+if (!imageMobile) {
+  imageMobile = image;
+}
+---
+
+<div
+  class={`carousel-item zooming hero-slide-${id} sk__hero-slider-item sk__image-back-cover ` +
+    (id === 1 ? "active" : "")}
+>
+  <section class="sk__parallax-background-section sk__hero-item-theme-style">
+    <!-- Parallax background -->
+    <div
+      class="sk__parallax-background-element sk__absolute sk__image-back-cover slider1-home desktop-banner"
+      style={`background-image: url(${image});`}
+    >
+    </div>
+    <div
+      class="sk__parallax-background-element sk__absolute sk__image-back-cover mb-banner mb-banner1"
+      style={`background-image: url(${imageMobile}); background-position: center;`}
+    >
+    </div>
+    <div class="flex-helper-div"></div>
+    <!-- Main hero heading -->
+    <div class="hero-h1-box">
+      <div class="cover-text-wrapper">
+        <h1
+          class="hero-h1 animated-element phase-1 text-center text-md-start"
+          set:html={title}
+        />
+      </div>
+    </div>
+    <!-- Bottom Left box -->
+    <div class="hero-box-bottom-left text-center text-sm-start"></div>
+  </section>
+</div>

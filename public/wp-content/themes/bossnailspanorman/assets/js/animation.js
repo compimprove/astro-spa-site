@@ -125,12 +125,15 @@
     }
 
 
+    // Show all services by default
+    $(".servicesbox").show();
+    $(".divseracti").addClass("services_active").removeClass("bg_services");
+
+    // Optional: If you still want to allow toggling on click
     $(".divseracti").click(function () {
         var id = $(this).attr("id").replace("seracti_", "");
-        $(".servicesbox").hide();
-        $(".divseracti").removeClass("services_active").addClass("bg_services");
-        $("#services_" + id).show();
-        $("#seracti_" + id).removeClass("bg_services").addClass("services_active");
+        $(".divseracti").toggleClass("services_active bg_services");
+        $("#services_" + id).toggle();
     });
 
     function fHomeMenuServices() {

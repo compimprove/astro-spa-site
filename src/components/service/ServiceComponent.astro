@@ -1,0 +1,52 @@
+---
+interface Props {
+  id: string;
+  serviceTitle: string;
+  images?: string[];
+  content?: string;
+  serviceList: {
+    name: string;
+    price?: string;
+    note?: string;
+  }[];
+}
+
+let { serviceList, serviceTitle, images, id, content } = Astro.props;
+if (images.length === 0)
+  images = [
+    "/wp-content/themes/bossnailspanorman/assets/images/services/1.webp",
+    // "/wp-content/themes/bossnailspanorman/assets/images/services/2.webp",
+    // "/wp-content/themes/bossnailspanorman/assets/images/services/3.webp",
+  ];
+---
+
+<div class="group_services divseracti" id={`seracti_${serviceTitle}`}>{serviceTitle}</div>
+<div class="servicesbox bg_services services_active" id={`services_${id}`}>
+  <div class="servicesgroup">
+    <div class="col-lg-4 col-md-4 servicesimg">
+      <div class="servicesimg">
+        {images.map((image) => <img src={image} />)}
+      </div>
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-12 grouprow">
+      {
+        serviceList.length > 0 &&
+          serviceList.map((service) => (
+            <div class="row_svpage">
+              <div class="row_name text-color-sv">{service.name}</div>
+              {service.price && <div class="price">{service.price}</div>}
+              {service.note && <div class="row_note">{service.note}</div>}
+            </div>
+          ))
+      }
+      {
+        serviceList.length === 0 && (
+          <div
+            style="color: rgb(67, 67, 67)"
+            set:html={content}
+          />
+        )
+      }
+    </div>
+  </div>
+</div>

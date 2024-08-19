@@ -3,7 +3,9 @@ import BackToTopButton from "../components/BackToTopButton.astro";
 import Curtain from "../components/Curtain.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import HeroImageSlide from "../components/HeroImageSlide.astro";
 import PortfolioItem from "../components/PortfolioItem.astro";
+import ServiceSquare from "../components/ServiceSquare.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -45,132 +47,27 @@ import Layout from "../layouts/Layout.astro";
                 data-bs-target="#sk__hero-carousel-slider"
                 data-bs-slide-to="2"
                 aria-label="Slide 3"></button>
-              <button
-                type="button"
-                data-bs-target="#sk__hero-carousel-slider"
-                data-bs-slide-to="3"
-                aria-label="Slide 4"></button>
             </div>
             <div class="carousel-inner">
-              <!-- Slide 1 -->
-              <div
-                class="carousel-item zooming active hero-slide-1 sk__hero-slider-item sk__image-back-cover"
-              >
-                <section
-                  class="sk__parallax-background-section sk__hero-item-theme-style"
-                >
-                  <!-- Parallax background -->
-                  <div
-                    class="sk__parallax-background-element sk__absolute sk__image-back-cover slider1-home desktop-banner"
-                    style="
-							  background-image: url(/slider/1.jpg);
-							"
-                  >
-                  </div>
-                  <div
-                    class="sk__parallax-background-element sk__absolute sk__image-back-cover mb-banner mb-banner1"
-                    style="
-							  background-image: url(/slider/1.jpg);
-							"
-                  >
-                  </div>
-                  <div class="flex-helper-div"></div>
-                  <!-- Main hero heading -->
-                  <div class="hero-h1-box">
-                    <div class="cover-text-wrapper">
-                      <h1
-                        class="hero-h1 animated-element phase-1 text-center text-md-start"
-                      >
-                        Beauty at first<br />
-                        glamour
-                      </h1>
-                    </div>
-                  </div>
-                  <!-- Bottom Left box -->
-                  <div class="hero-box-bottom-left text-center text-sm-start">
-                  </div>
-                </section>
-              </div>
-              <!-- /.hero-slide-1 -->
-              <!-- Slide 2 -->
-              <div
-                class="carousel-item zooming hero-slide-2 sk__hero-slider-item sk__image-back-cover"
-              >
-                <section
-                  class="sk__video-background-section sk__hero-item-theme-style"
-                >
-                  <div
-                    class="sk__parallax-background-element sk__absolute sk__image-back-cover slider-home2 slider-home22 desktop-banner"
-                    style="
-                      background-image: url(/slider/2.jpg);
-							      "
-                  >
-                  </div>
-                  <div
-                    class="sk__parallax-background-element sk__absolute sk__image-back-cover slider-home4 mb-banner"
-                    style="
-                      background-image: url(/slider/2.jpg);
-							      "
-                  >
-                  </div>
-                  <div class="flex-helper-div"></div>
-                  <!-- Main hero heading -->
-                  <div class="hero-h1-box">
-                    <div class="cover-text-wrapper">
-                      <h1
-                        class="hero-h1 animated-element phase-1 text-center text-md-start"
-                      >
-                        Adorning today, <br />styling you
-                      </h1>
-                    </div>
-                  </div>
-                  <!-- Bottom Left box -->
-                  <div class="hero-box-bottom-left text-center text-sm-start">
-                  </div>
-                </section>
-              </div>
-              <!-- /.hero-slide-2 -->
-              <!-- Slide 3 -->
-              <div
-                class="carousel-item zooming hero-slide-3 sk__hero-slider-item sk__image-back-cover"
-              >
-                <section
-                  class="sk__parallax-background-section sk__hero-item-theme-style"
-                >
-                  <!-- Parallax background -->
-                  <div
-                    class="sk__parallax-background-element sk__absolute sk__image-back-cover slider-home2 desktop-banner"
-                    style="
-                      background-image: url(/slider/3.jpg);
-                    "
-                  >
-                  </div>
-                  <div
-                    class="sk__parallax-background-element sk__absolute sk__image-back-cover slider-home4 mb-banner"
-                    style="
-                      background-image: url(/slider/3.jpg);
-                    "
-                  >
-                  </div>
-                  <div class="flex-helper-div"></div>
-                  <!-- Main hero heading -->
-                  <div class="hero-h1-box">
-                    <div class="cover-text-wrapper">
-                      <h1
-                        class="hero-h1 animated-element phase-1 text-center text-md-start"
-                      >
-                        Let me be <br />your nail girl.
-                      </h1>
-                    </div>
-                  </div>
-                  <!-- Bottom Left box -->
-                  <div class="hero-box-bottom-left text-center text-sm-start">
-                  </div>
-                </section>
-              </div>
-              <!-- /.hero-slide-3 -->
+              <HeroImageSlide
+                id={1}
+                title="Beauty at first<br />glamour"
+                image="/slider/1.png"
+                imageMobile="/slider/1-mobile.png"
+              />
+              <HeroImageSlide
+                id={2}
+                title="Adorning today, <br />styling you"
+                image="/slider/2.jpg"
+                imageMobile="/slider/2-mobile.png"
+              />
+              <HeroImageSlide
+                id={3}
+                title="Let me be <br />your nail girl."
+                image="/slider/3.jpg"
+                imageMobile="/slider/3-mobile.png"
+              />
             </div>
-            <!-- Arrows Bootstrap 5 -->
             <button
               class="carousel-control-prev"
               type="button"
@@ -329,156 +226,34 @@ import Layout from "../layouts/Layout.astro";
                             <div
                               class="row sk__iconboxes-wrapper text-center sk__flex-center-x"
                             >
-                              <div class="sk__iconbox-services1">
-                                <div class="sk__iconbox">
-                                  <a
-                                    class="services_home"
-                                    href="services%3Fid=1.html#manicure"
-                                  >
-                                    <img
-                                      decoding="async"
-                                      src="/wp-content/themes/bossnailspanorman/assets/images/services-home/1.webp"
-                                    />
-                                  </a>
-                                  <a
-                                    class="sk__iconbox-text-link gradient-links-bright"
-                                    href="services%3Fid=1.html#manicure"
-                                  >
-                                    <h5>Manicures</h5>
-                                  </a>
-                                  <div>
-                                    <img
-                                      decoding="async"
-                                      src="/wp-content/themes/bossnailspanorman/assets/images/services-home/line-home.png"
-                                    />
-                                  </div>
-                                  <p>
-                                    Be more beautiful and stylish with our
-                                    manicure service. All of the staff are
-                                    well-trained, careful and whole-hearted.
-                                    Take the time from your busy schedule to
-                                    help your hands and nails look their best.
-                                  </p>
-                                  <a
-                                    class="btn btn-outline-gold"
-                                    href="services%3Fid=1.html#manicure"
-                                    role="button">Our Services</a
-                                  >
-                                </div>
-                              </div>
-                              <div class="sk__iconbox-services1">
-                                <div class="sk__iconbox">
-                                  <a
-                                    class="services_home"
-                                    href="services%3Fid=2.html#pedicure"
-                                  >
-                                    <img
-                                      decoding="async"
-                                      src="/wp-content/themes/bossnailspanorman/assets/images/services-home/2.webp"
-                                    />
-                                  </a>
-                                  <a
-                                    class="sk__iconbox-text-link gradient-links-bright"
-                                    href="services%3Fid=2.html#pedicure"
-                                  >
-                                    <h5>Pedicure</h5>
-                                  </a>
-                                  <div>
-                                    <img
-                                      decoding="async"
-                                      src="/wp-content/themes/bossnailspanorman/assets/images/services-home/line-home.png"
-                                    />
-                                  </div>
-                                  <p>
-                                    Indulge your feet with our exclusive spa
-                                    pedicures. Our pedicure chairs are noiseless
-                                    and pipe less offering the best combination
-                                    of relaxation & sanitation. We'll make you
-                                    feel like royalty!
-                                  </p>
-                                  <a
-                                    class="btn btn-outline-gold"
-                                    href="services%3Fid=2.html#pedicure"
-                                    role="button">Our Services</a
-                                  >
-                                </div>
-                              </div>
+                              <ServiceSquare
+                                title="Manicure"
+                                description="Be more beautiful and stylish with our manicure service. All of the staff are well-trained, careful and whole-hearted. Take the time from your busy schedule to help your hands and nails look their best."
+                                image="services/2.png"
+                                link="/services"
+                              />
+                              <ServiceSquare
+                                title="Pedicure"
+                                description="Indulge your feet with our exclusive spa pedicures. Our pedicure chairs are noiseless and pipe less offering the best combination of relaxation & sanitation. We'll make you feel like royalty!"
+                                image="/services/3.png"
+                                link="/services"
+                              />
                             </div>
                             <div
                               class="row sk__iconboxes-wrapper text-center sk__flex-center-x"
                             >
-                              <div class="sk__iconbox-services1">
-                                <div class="sk__iconbox">
-                                  <a
-                                    class="services_home"
-                                    href="services%3Fid=8.html#waxing"
-                                  >
-                                    <img
-                                      decoding="async"
-                                      src="/wp-content/themes/bossnailspanorman/assets/images/services-home/3.webp"
-                                    />
-                                  </a>
-                                  <a
-                                    class="sk__iconbox-text-link gradient-links-bright"
-                                    href="services%3Fid=8.html#waxing"
-                                  >
-                                    <h5>Waxing</h5>
-                                  </a>
-                                  <div>
-                                    <img
-                                      decoding="async"
-                                      src="/wp-content/themes/bossnailspanorman/assets/images/services-home/line-home.png"
-                                    />
-                                  </div>
-                                  <p>
-                                    We understand that waxing is personal, so
-                                    we're committed to making you comfortable,
-                                    both through friendly, straightforward
-                                    service and the very best waxing products
-                                    available.
-                                  </p>
-                                  <a
-                                    class="btn btn-outline-gold"
-                                    href="services%3Fid=8.html#waxing"
-                                    role="button">Our Services</a
-                                  >
-                                </div>
-                              </div>
-                              <div class="sk__iconbox-services1">
-                                <div class="sk__iconbox">
-                                  <a
-                                    class="services_home"
-                                    href="services%3Fid=8.html#waxing"
-                                  >
-                                    <img
-                                      decoding="async"
-                                      src="/wp-content/themes/bossnailspanorman/assets/images/services-home/1.webp"
-                                    />
-                                  </a>
-                                  <a
-                                    class="sk__iconbox-text-link gradient-links-bright"
-                                    href="services%3Fid=8.html#waxing"
-                                  >
-                                    <h5>Facial</h5>
-                                  </a>
-                                  <div>
-                                    <img
-                                      decoding="async"
-                                      src="/wp-content/themes/bossnailspanorman/assets/images/services-home/line-home.png"
-                                    />
-                                  </div>
-                                  <p>
-                                    Come and experience our customized facial
-                                    that blend relaxation with effective
-                                    treatments to give you the best skin.
-                                  </p>
-                                  <a
-                                    class="btn btn-outline-gold"
-                                    href="services%3Fid=8.html#waxing"
-                                    role="button">Our Services</a
-                                  >
-                                </div>
-                              </div>
+                              <ServiceSquare
+                                title="Waxing"
+                                description="We understand that waxing is personal, so we're committed to making you comfortable, both through friendly, straightforward service and the very best waxing products available."
+                                image="/services/1.png"
+                                link="/services"
+                              />
+                              <ServiceSquare
+                                title="Facial"
+                                description="Come and experience our customized facial that blend relaxation with effective treatments to give you the best skin."
+                                image="/services/facial.png"
+                                link="/services"
+                              />
                             </div>
                           </div>
                         </section>
@@ -532,27 +307,18 @@ import Layout from "../layouts/Layout.astro";
                                   <h1
                                     class="super-heading sk__clipped-text mb-sm-1 text-color2"
                                   >
-                                    Host A Party<span class="heading-deco"
-                                      >.-></span
-                                    >
+                                    Host A Party
                                   </h1>
-                                  <p class="mw-440">
-                                    Our Salon is the perfect place to host a
-                                    bridal shower, birthday celebration,
-                                    bachelorette/bachelor party, corporate event
-                                    or just a get-together for friends, family,
-                                    and co-workers. We have a beautiful and
+                                  <p class="mw-300">
+                                    Our salon is the perfect place to host a
+                                    party, corporate event or a just a
+                                    get-together for friends, family, and
+                                    co-workers. We have a beautiful and
                                     accommodating space, affordable prices to
-                                    fit everyone&#8217;s budget, and a large
-                                    team of technicians to serve your needs so
-                                    you and your guests can relax and enjoy the
-                                    party.
+                                    fit everyone's budget, and a large team of
+                                    technicians to serve your needs so you and
+                                    your guests can relax and enjoy the party.
                                   </p>
-                                  <a
-                                    class="btn btn-outline-light mt-3"
-                                    href="https://bossnailspa.com/party"
-                                    role="button">Host A Party</a
-                                  >
                                 </div>
                               </div>
                             </div>
@@ -616,7 +382,7 @@ import Layout from "../layouts/Layout.astro";
                           </div>
                         </section>
                         <!-- /.sk__portfolio-section -->
-                        <!-- <section class="sk__laptop-section egift-home-footer">
+                        <section class="sk__laptop-section egift-home-footer">
                           <div class="container sk__supercontainer">
                             <div class="row">
                               <div
@@ -637,8 +403,8 @@ import Layout from "../layouts/Layout.astro";
                                       <p
                                         class="sk__rectangles-laptop-custom-p mw-440"
                                       >
-                                        It’s always important to take good care
-                                        of yourself. It’s never a bad idea to
+                                        It's always important to take good care
+                                        of yourself. It's never a bad idea to
                                         use our services to pamper yourself. You
                                         deserve every bit of it. You know what
                                         they say. Everything is better with
@@ -660,8 +426,8 @@ import Layout from "../layouts/Layout.astro";
                               </div>
                             </div>
                           </div>
-                        </section> -->
-                        <!-- /.sk__laptop-section -->
+                        </section>
+                        <!-- /.sk__laptop-section
                       </div>
                     </div>
                   </div>
@@ -682,87 +448,112 @@ import Layout from "../layouts/Layout.astro";
           </article>
         </div>
         <!--Wrapper-->
-        <div id="sidebar" role="complementary">
-          <ul>
-            <li>
-              <form
-                role="search"
-                method="get"
-                id="searchform"
-                class="searchform"
-                action="index.html"
-              >
-                <div>
-                  <label class="screen-reader-text" for="s">Search for:</label>
-                  <input type="text" value="" name="s" id="s" />
-                  <input type="submit" id="searchsubmit" value="Search" />
-                </div>
-              </form>
-            </li>
-            <!-- Author information is disabled per default. Uncomment and fill in your details if you want to use it.
+                        <div id="sidebar" role="complementary">
+                          <ul>
+                            <li>
+                              <form
+                                role="search"
+                                method="get"
+                                id="searchform"
+                                class="searchform"
+                                action="index.html"
+                              >
+                                <div>
+                                  <label class="screen-reader-text" for="s"
+                                    >Search for:</label
+                                  >
+                                  <input type="text" value="" name="s" id="s" />
+                                  <input
+                                    type="submit"
+                                    id="searchsubmit"
+                                    value="Search"
+                                  />
+                                </div>
+                              </form>
+                            </li>
+                            <!-- Author information is disabled per default. Uncomment and fill in your details if you want to use it.
 									  <li><h2>Author</h2>
 									  <p>A little something about you, the author. Nothing lengthy, just an overview.</p>
 									  </li>
 									  -->
-          </ul>
-          <ul role="navigation">
-            <li class="pagenav">
-              <h2>Pages</h2>
-              <ul>
-                <li class="page_item page-item-19">
-                  <a href="promotions/contact.html">Contact</a>
-                </li>
-                <li class="page_item page-item-17">
-                  <a href="promotions/gallery.html">Gallery</a>
-                </li>
-                <li class="page_item page-item-26">
-                  <a href="promotions/happy-hour.html">Happy Hour</a>
-                </li>
-                <li class="page_item page-item-9 current_page_item">
-                  <a href="/" aria-current="page">Home</a>
-                </li>
-                <li class="page_item page-item-14">
-                  <a href="promotions/promotion.html">Promotions</a>
-                </li>
-                <li class="page_item page-item-11">
-                  <a href="promotions/services.html">Services</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <h2>Archives</h2>
-              <ul>
-                <li><a href="2024/01/index.html">January 2024</a></li>
-              </ul>
-            </li>
-            <li class="categories">
-              <h2>Categories</h2>
-              <ul>
-                <li class="cat-item cat-item-1">
-                  <a href="category/uncategorized/index.html">Uncategorized</a>
-                  (1)
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <h2>Meta</h2>
-              <ul>
-                <li><a href="/wp-login.php.html">Log in</a></li>
-              </ul>
-            </li>
-          </ul>
+                          </ul>
+                          <ul role="navigation">
+                            <li class="pagenav">
+                              <h2>Pages</h2>
+                              <ul>
+                                <li class="page_item page-item-19">
+                                  <a href="promotions/contact.html">Contact</a>
+                                </li>
+                                <li class="page_item page-item-17">
+                                  <a href="promotions/gallery.html">Gallery</a>
+                                </li>
+                                <li class="page_item page-item-26">
+                                  <a href="promotions/happy-hour.html"
+                                    >Happy Hour</a
+                                  >
+                                </li>
+                                <li
+                                  class="page_item page-item-9 current_page_item"
+                                >
+                                  <a href="/" aria-current="page">Home</a>
+                                </li>
+                                <li class="page_item page-item-14">
+                                  <a href="promotions/promotion.html"
+                                    >Promotions</a
+                                  >
+                                </li>
+                                <li class="page_item page-item-11">
+                                  <a href="promotions/services.html">Services</a
+                                  >
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <h2>Archives</h2>
+                              <ul>
+                                <li>
+                                  <a href="2024/01/index.html">January 2024</a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="categories">
+                              <h2>Categories</h2>
+                              <ul>
+                                <li class="cat-item cat-item-1">
+                                  <a href="category/uncategorized/index.html"
+                                    >Uncategorized</a
+                                  >
+                                  (1)
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                          <ul>
+                            <li>
+                              <h2>Meta</h2>
+                              <ul>
+                                <li><a href="/wp-login.php.html">Log in</a></li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </div>
+                        <!-- Footer
+							  ================================================== -->
+                        <Footer />
+                        <!-- Helper div for inserting before scripts
+							  ================================================== -->
+                        <div class="sk__body-end"></div>
+                      </div>
+                      <!-- /#smooth-content -->
+                    </div>
+                    <!-- /#smooth-wrapper -->
+                  </div>
+                </div>
+              </div>
+            </section>
+          </article>
         </div>
-        <!-- Footer
-							  ================================================== -->
-        <Footer />
-        <!-- Helper div for inserting before scripts
-							  ================================================== -->
-        <div class="sk__body-end"></div>
       </div>
-      <!-- /#smooth-content -->
     </div>
-    <!-- /#smooth-wrapper -->
-  </main>
-</Layout>
+  </main></Layout
+>
