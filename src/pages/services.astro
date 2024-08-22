@@ -56,12 +56,12 @@ import Layout from "../layouts/Layout.astro";
                     <section
                       class="position-relative sk__image-back-cover services-bg-page"
                     >
-                      <div class="container">
-                        <div class="row">
+                      <div class="container px-4">
+                        <div>
                           <ServiceComponent
                             id="1"
                             serviceTitle="Acrylic Nail"
-                            images={[]}
+                            images={["/service-images/acrylic-nail.png"]}
                             serviceList={[
                               {
                                 name: "Acrylic New Set",
@@ -92,9 +92,7 @@ import Layout from "../layouts/Layout.astro";
                           <ServiceComponent
                             id="2"
                             serviceTitle="Dipping Powder"
-                            images={[
-                              "/wp-content/themes/bossnailspanorman/assets/images/services/2.webp",
-                            ]}
+                            images={["/service-images/dipping.png"]}
                             serviceList={[
                               {
                                 name: "Dipping Powder on nature nails",
@@ -114,36 +112,37 @@ import Layout from "../layouts/Layout.astro";
                             id="3"
                             serviceTitle="Manicure & Pedicure"
                             images={[
-                              "/wp-content/themes/bossnailspanorman/assets/images/services/2.webp",
+                              // "/service-images/pedicure.png",
+                              "/service-images/pedicure2.png",
                             ]}
                             serviceList={[
                               {
                                 name: "The Pure Organic Tropical Pedicure",
-                                note: "Come with fresh orange/lemon/mongo/cucumber, hot stone, hot poroffin wax...",
+                                note: "Comes with fresh orange/lemon/mango/cucumber, hot stone, hot paraffin wax...",
                               },
                               {
                                 name: "Volcano Spa with CBD Pedicure",
-                                note: "Scents: Gold, Hot I-ovo, Beach Paradise, Rose Gold, Fuji Pear, Spearmint.",
+                                note: "Scents: Gold, Hot Lava, Beach Paradise, Rose Gold, Fuji Pear, Spearmint.",
                               },
                               {
                                 name: "Volcano Spa Pedicure",
-                                note: "Scents: Lavender, Tropical, Honey Pear, Green Teo, Jasmine...",
+                                note: "Scents: Lavender, Tropical, Honey Pear, Green Tea, Jasmine...",
                               },
                               {
                                 name: "Lavish Collagen Spa Pedicure",
-                                note: "Come with the Collagen Spo Pedicure's system ond worm Collogen Shocks.",
+                                note: "Comes with the Collagen Spa Pedicure's system and warm Collagen Shocks.",
                               },
                               {
                                 name: "Deluxe Pedicure",
-                                note: "Come with Seo Solt or Sugar Scrub, collus treatment,lotion ond hot towel.",
+                                note: "Come with Sea Salt or Sugar Scrub, callus treatment, lotion and hot towel.",
                               },
                               {
                                 name: "Classic Pedicure",
-                                note: "Come with toe nails trim, lotion, hot towel (does not include the collus treatment)",
+                                note: "Come with toe nails trim, lotion, hot towel (does not include the callus treatment)",
                               },
                               {
-                                name: "Princess Pedicure",
-                                note: "Includes oll the benefit of o classic pedicure",
+                                name: "Princess Pedicure (Kid spa pedicure)",
+                                note: "Includes all the benefits of a classic pedicure",
                               },
                             ]}
                           />
@@ -151,7 +150,8 @@ import Layout from "../layouts/Layout.astro";
                             id="4"
                             serviceTitle="Waxing & Tinting"
                             images={[
-                              "/wp-content/themes/bossnailspanorman/assets/images/services/2.webp",
+                              "/service-images/waxing1.png",
+                              "/service-images/waxing2.png",
                             ]}
                             serviceList={[
                               {
@@ -194,67 +194,115 @@ import Layout from "../layouts/Layout.astro";
                           />
                           <ServiceComponent
                             id="5"
-                            serviceTitle="Eyelashes Extension"
-                            images={[
-                              "/wp-content/themes/bossnailspanorman/assets/images/services/2.webp",
+                            serviceTitle="Additional Services"
+                            images={["/service-images/additional-service.jpg"]}
+                            serviceList={[
+                              {
+                                name: "Take-off with Services",
+                              },
+                              {
+                                name: "Take-off without Services",
+                              },
+                              {
+                                name: "French/Color Tips",
+                              },
+                              {
+                                name: "Nail Repair",
+                              },
+                              {
+                                name: "Gel Polish",
+                              },
+                              {
+                                name: "Polish Change on Hands/Toes",
+                              },
+                              {
+                                name: "Nail Design",
+                              },
+                              {
+                                name: "Long Nails, Shape Nails Almond, Coffin, Stilettos",
+                              },
+                              {
+                                name: "Add on Collagen Glove/Shocks Paraffin wax",
+                              },
                             ]}
-                            serviceList={[]}
-                            content="Coming Soon..."
                           />
-
-                          <ServiceComponent
-                            id="7"
-                            serviceTitle="Massage"
-                            images={[]}
-                            content="Coming Soon..."
-                            serviceList={[]}
-                          />
-                          <ServiceComponent
-                            id="8"
-                            serviceTitle="Facial"
-                            images={[]}
-                            content="Coming Soon..."
-                            serviceList={[]}
-                          />
+                          <div
+                            class="d-flex flex-column flex-md-row gap-5 my-5"
+                          >
+                            <div class="w-100">
+                              <ServiceComponent
+                                id="6"
+                                isComingSoon={true}
+                                serviceTitle="Eyelashes Extension"
+                                images={["/service-images/eyelashes.png"]}
+                                serviceList={[]}
+                              />
+                            </div>
+                            <div class="w-100">
+                              <ServiceComponent
+                                id="7"
+                                isComingSoon={true}
+                                serviceTitle="Massage"
+                                images={["/service-images/massage.png"]}
+                                serviceList={[]}
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="d-flex flex-column flex-md-row gap-5 my-5 justify-content-center"
+                          >
+                            <div class="">
+                              <ServiceComponent
+                                id="8"
+                                isComingSoon={true}
+                                serviceTitle="Facial"
+                                images={["/service-images/facial.png"]}
+                                serviceList={[]}
+                              />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </section>
                   </div>
                 </div>
               </div>
-            </div>
-            <div id="pg-gb11-66bb66fe2f54d-1" class="panel-grid panel-no-style">
-              <div id="pgc-gb11-66bb66fe2f54d-1-0" class="panel-grid-cell">
-                <div
-                  id="panel-gb11-66bb66fe2f54d-1-0-0"
-                  class="widget_text so-panel widget widget_custom_html panel-first-child panel-last-child"
-                  data-index="1"
-                >
-                  <div class="textwidget custom-html-widget">
-                    <script>
-                      var element = document.getElementById("mLinkServices");
-                      element.classList.add("selected");
-                    </script>
+              <div
+                id="pg-gb11-66bb66fe2f54d-1"
+                class="panel-grid panel-no-style"
+              >
+                <div id="pgc-gb11-66bb66fe2f54d-1-0" class="panel-grid-cell">
+                  <div
+                    id="panel-gb11-66bb66fe2f54d-1-0-0"
+                    class="widget_text so-panel widget widget_custom_html panel-first-child panel-last-child"
+                    data-index="1"
+                  >
+                    <div class="textwidget custom-html-widget">
+                      <script>
+                        var element = document.getElementById("mLinkServices");
+                        element.classList.add("selected");
+                      </script>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <section class="entry-meta"></section>
         </section>
-        <section class="entry-meta"></section>
       </article>
+      <!--Wrapper-->
+      <!-- Footer
+                  ================================================== -->
+      <Footer />
+
+      <!-- Helper div for inserting before scripts
+                  ================================================== -->
+      <div class="sk__body-end"></div>
+
+      <!-- /#smooth-content -->
+
+      <!-- /#smooth-wrapper -->
     </div>
-    <!--Wrapper-->
-    <!-- Footer
-                  ================================================== -->
-    <Footer />
-
-    <!-- Helper div for inserting before scripts
-                  ================================================== -->
-    <div class="sk__body-end"></div>
-
-    <!-- /#smooth-content -->
-
-    <!-- /#smooth-wrapper -->
   </main>
 </Layout>
