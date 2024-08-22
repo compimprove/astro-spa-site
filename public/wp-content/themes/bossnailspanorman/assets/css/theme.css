@@ -698,7 +698,7 @@
 .servicesimg img {
   border: 1px solid #d5d5d5;
   padding: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 1rem;
   width: 100%;
 }
 .servicesimg2 img {
@@ -733,7 +733,6 @@
 .row_name {
   margin-top: 5px;
   float: left;
-  width: 70%;
   color: #000;
 }
 .row_svpage {
@@ -10015,9 +10014,7 @@ footer.sk__footer-simple.sk__footer-simple-fixed {
     margin: 0px auto;
     overflow: hidden;
   }
-  .row_name {
-    width: 65%;
-  }
+
   .price {
     width: 35%;
   }
