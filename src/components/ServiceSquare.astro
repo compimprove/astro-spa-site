@@ -25,6 +25,21 @@ let { title, description, image, link } = Astro.props;
     <p>
       {description}
     </p>
-    <a class="btn btn-outline-gold" href={link} role="button">Our Services</a>
+    <div class="bottom-wrapper">
+      <a class="btn btn-outline-gold" href={link} role="button">Our Services</a>
+    </div>
   </div>
 </div>
+<style>
+  .sk__iconbox {
+    position: relative;
+  }
+  .bottom-wrapper {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+  }
+</style>

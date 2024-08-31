@@ -194,8 +194,12 @@ import Layout from "../layouts/Layout.astro";
                                       />
                                     </div>
                                     <div class="content">
-                                      <img decoding="async" src="/logo-about.png" alt="About">
-                                  </div>
+                                      <img
+                                        decoding="async"
+                                        src="/logo-about.png"
+                                        alt="About"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -242,23 +246,19 @@ import Layout from "../layouts/Layout.astro";
                                 image="/services/3.png"
                                 link="/services"
                               />
-                            </div>
-                            <div
-                              class="row sk__iconboxes-wrapper text-center sk__flex-center-x"
-                            >
                               <ServiceSquare
                                 title="Waxing"
                                 description="We understand that waxing is personal, so we're committed to making you comfortable, both through friendly, straightforward service and the very best waxing products available."
                                 image="/services/1.png"
                                 link="/services"
                               />
-                              <ServiceSquare
+                            </div>
+                            <!-- <ServiceSquare
                                 title="Facial"
                                 description="Come and experience our customized facial that blend relaxation with effective treatments to give you the best skin."
                                 image="/services/facial.png"
                                 link="/services"
-                              />
-                            </div>
+                              /> -->
                           </div>
                         </section>
                         <!-- /.sk__services-section -->
@@ -418,11 +418,11 @@ import Layout from "../layouts/Layout.astro";
                                         some of our services. They will
                                         appreciate your kind gestures.
                                       </p>
-                                      <a
+                                      <!-- <a
                                         class="btn btn-outline-light mt-3"
-                                        href="promotion.html"
+                                        href="#"
                                         role="button">Promotions</a
-                                      >
+                                      > -->
                                     </div>
                                   </div>
                                 </div>
@@ -502,9 +502,7 @@ import Layout from "../layouts/Layout.astro";
                                   <a href="/" aria-current="page">Home</a>
                                 </li>
                                 <li class="page_item page-item-14">
-                                  <a href="promotions/promotion.html"
-                                    >Promotions</a
-                                  >
+                                  <a href="#">Promotions</a>
                                 </li>
                                 <li class="page_item page-item-11">
                                   <a href="promotions/services.html">Services</a
@@ -559,5 +557,5 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
     </div>
-  </main></Layout
->
+  </main>
+</Layout>
