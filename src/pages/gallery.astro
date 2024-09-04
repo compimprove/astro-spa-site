@@ -5,9 +5,21 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import { getGalleryImages } from "../utils/galleryImages";
+import { Image, getImage } from "astro:assets";
 import { urlFor } from "../utils/image";
 
 const galleryImages = await getGalleryImages();
+const optimizedImages = await Promise.all(
+  galleryImages.images?.map(async (image) => {
+    const optimizedImage = await getImage({
+      src: urlFor(image).url(),
+      width: 600,
+      height: 600,
+      format: "webp",
+    });
+    return { ...image, optimizedSrc: optimizedImage.src };
+  }) || []
+);
 ---
 
 <Layout title="Our Gallery">
@@ -45,14 +57,13 @@ const galleryImages = await getGalleryImages();
           <div id="pgc-gb19-66bc92aa7447c-0-0" class="panel-grid-cell">
             <div class="gallery-grid">
               {
-                galleryImages &&
-                  galleryImages.images?.map((image) => (
-                    <img
-                      class="gallery-image"
-                      src={urlFor(image).url()}
-                      alt={image.alt}
-                    />
-                  ))
+                optimizedImages.map((image) => (
+                  <img
+                    class="gallery-image"
+                    src={image.optimizedSrc}
+                    alt={image.alt || "Gallery Image"}
+                  />
+                ))
               }
             </div>
           </div>
