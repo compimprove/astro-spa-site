@@ -9,6 +9,12 @@ import ServiceSquare from "../components/ServiceSquare.astro";
 import Layout from "../layouts/Layout.astro";
 import { getHomePageContent } from "../utils/homePageContent";
 import { PortableText } from "astro-portabletext";
+import sliderImage1 from "../images/slider/1.png";
+import sliderImage2 from "../images/slider/2.png";
+import sliderImage3 from "../images/slider/3.jpg";
+import sliderImage1Mobile from "../images/slider/1-mobile2.png";
+import sliderImage2Mobile from "../images/slider/2-mobile.png";
+import sliderImage3Mobile from "../images/slider/3-mobile2.png";
 
 const homePageContent = await getHomePageContent();
 const { news, hostParty, phoneNumber } = homePageContent;
@@ -57,20 +63,20 @@ const { news, hostParty, phoneNumber } = homePageContent;
               <HeroImageSlide
                 id={1}
                 title="Radiance from the<br />Very First Touch"
-                image="/slider/1.png"
-                imageMobile="/slider/1-mobile2.png"
+                image={sliderImage1}
+                imageMobile={sliderImage1Mobile}
               />
               <HeroImageSlide
                 id={2}
                 title="The Valley's<br />Best Pedicure"
-                image="/slider/2.jpg"
-                imageMobile="/slider/2-mobile2.png"
+                image={sliderImage2}
+                imageMobile={sliderImage2Mobile}
               />
               <HeroImageSlide
                 id={3}
                 title="Let us give <br />your nails<br />some love"
-                image="/slider/3.jpg"
-                imageMobile="/slider/3-mobile2.png"
+                image={sliderImage3}
+                imageMobile={sliderImage3Mobile}
               />
             </div>
             <button

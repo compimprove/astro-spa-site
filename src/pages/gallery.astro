@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import { getGalleryImages } from "../utils/galleryImages";
-import { Image, getImage } from "astro:assets";
+import { getImage } from "astro:assets";
 import { urlFor } from "../utils/image";
 
 const galleryImages = await getGalleryImages();
@@ -13,8 +13,7 @@ const optimizedImages = await Promise.all(
   galleryImages.images?.map(async (image) => {
     const optimizedImage = await getImage({
       src: urlFor(image).url(),
-      width: 600,
-      height: 600,
+      inferSize: true,
       format: "webp",
     });
     return { ...image, optimizedSrc: optimizedImage.src };

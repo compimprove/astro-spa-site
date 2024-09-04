@@ -1,14 +1,22 @@
 ---
+import { getImage } from "astro:assets";
 interface Props {
   id: number;
   title: string;
-  image: string;
-  imageMobile?: string;
+  image: ImageMetadata;
+  imageMobile?: ImageMetadata;
 }
 let { id, title, image, imageMobile } = Astro.props;
-if (!imageMobile) {
-  imageMobile = image;
-}
+const imageOptimized = await getImage({
+  src: image,
+  inferSize: true,
+  format: "webp",
+});
+const imageMobileOptimized = await getImage({
+  src: imageMobile || image,
+  inferSize: true,
+  format: "webp",
+});
 ---
 
 <div
@@ -19,12 +27,12 @@ if (!imageMobile) {
     <!-- Parallax background -->
     <div
       class="sk__parallax-background-element sk__absolute sk__image-back-cover slider1-home desktop-banner"
-      style={`background-image: url(${image});`}
+      style={`background-image: url(${imageOptimized.src});`}
     >
     </div>
     <div
       class="sk__parallax-background-element sk__absolute sk__image-back-cover mb-banner mb-banner1"
-      style={`background-image: url(${imageMobile}); background-position: center;`}
+      style={`background-image: url(${imageMobileOptimized.src}); background-position: center;`}
     >
     </div>
     <div class="flex-helper-div"></div>

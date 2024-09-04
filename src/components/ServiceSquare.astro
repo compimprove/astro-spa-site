@@ -35,11 +35,17 @@ let { title, description, image, link } = Astro.props;
     position: relative;
   }
   .bottom-wrapper {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  @media all and (min-width: 1024px) {
+    .bottom-wrapper {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+    }
   }
 </style>

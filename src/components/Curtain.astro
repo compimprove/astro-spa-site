@@ -1,9 +1,57 @@
+---
+import { getImage } from "astro:assets";
+import curtainImageA from "../images/preload/a.png";
+import curtainImageB from "../images/preload/b.jpg";
+import curtainImageC from "../images/preload/c.png";
+
+const curtainImageAOptimized = await getImage({
+  src: curtainImageA,
+  inferSize: true,
+});
+
+const curtainImageBOptimized = await getImage({
+  src: curtainImageB,
+  inferSize: true,
+});
+
+const curtainImageCOptimized = await getImage({
+  src: curtainImageC,
+  inferSize: true,
+});
+---
+
 {
-  !import.meta.env.DEV && (
+  import.meta.env.DEV ?? (
     <section class="sk__master-curtain">
-      <div class="mcurtain mcurtain-left" />
-      <div class="mcurtain mcurtain-center" />
-      <div class="mcurtain mcurtain-right" />
+      <div
+        class="mcurtain mcurtain-left"
+        style={`background-image: url(${curtainImageAOptimized.src});`}
+      ></div>
+      <div
+        class="mcurtain mcurtain-center"
+        style={`background-image: url(${curtainImageBOptimized.src});`}
+      ></div>
+      <div
+        class="mcurtain mcurtain-right"
+        style={`background-image: url(${curtainImageCOptimized.src});`}
+      ></div>
     </section>
   )
 }
+
+<style>
+  .mcurtain-left {
+    left: 0;
+    background-position: center;
+  }
+
+  .mcurtain-center {
+    left: 33.333%;
+    background-position: center;
+  }
+
+  .mcurtain-right {
+    left: 66.666%;
+    background-position: center;
+  }
+</style>
