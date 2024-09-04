@@ -20,24 +20,23 @@ const curtainImageCOptimized = await getImage({
 });
 ---
 
-{
-  import.meta.env.DEV ?? (
-    <section class="sk__master-curtain">
-      <div
-        class="mcurtain mcurtain-left"
-        style={`background-image: url(${curtainImageAOptimized.src});`}
-      ></div>
-      <div
-        class="mcurtain mcurtain-center"
-        style={`background-image: url(${curtainImageBOptimized.src});`}
-      ></div>
-      <div
-        class="mcurtain mcurtain-right"
-        style={`background-image: url(${curtainImageCOptimized.src});`}
-      ></div>
-    </section>
-  )
-}
+<section class="sk__master-curtain">
+  <div
+    class="mcurtain mcurtain-left"
+    style={`background-image: url(${curtainImageAOptimized.src});`}
+  >
+  </div>
+  <div
+    class="mcurtain mcurtain-center"
+    style={`background-image: url(${curtainImageBOptimized.src});`}
+  >
+  </div>
+  <div
+    class="mcurtain mcurtain-right"
+    style={`background-image: url(${curtainImageCOptimized.src});`}
+  >
+  </div>
+</section>
 
 <style>
   .mcurtain-left {
