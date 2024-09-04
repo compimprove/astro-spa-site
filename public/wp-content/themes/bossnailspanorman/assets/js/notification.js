@@ -87,14 +87,3 @@ $(document).mouseup(function (e) {
     }
 });
 
-function myNavFunc() {
-    // If it's an iPhone..
-    // If it's an iPhone..
-    var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-    if (iOS) {
-        window.open("https://www.google.com/maps/place/BOSS+Nail+Spa/@35.2628842,-97.4916064,15z/data=!4m6!3m5!1s0x87b26b48f7afd231:0x72685e49c13a22a2!8m2!3d35.2628842!4d-97.4916064!16s%2Fg%2F11vbxnbky8?entry=ttu&hl=en");
-    }
-    else {
-        window.open("https://www.google.com/maps/place/BOSS+Nail+Spa/@35.2628842,-97.4916064,15z/data=!4m6!3m5!1s0x87b26b48f7afd231:0x72685e49c13a22a2!8m2!3d35.2628842!4d-97.4916064!16s%2Fg%2F11vbxnbky8?entry=ttu&hl=en");
-    }
-}
