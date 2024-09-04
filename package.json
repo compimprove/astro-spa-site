@@ -10,8 +10,20 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.13.3",
     "@astrojs/check": "^0.9.2",
+    "@astrojs/cloudflare": "^11.0.4",
+    "@astrojs/react": "^3.6.2",
+    "@sanity/astro": "^3.1.6",
+    "@sanity/client": "^6.21.3",
+    "@sanity/visual-editing": "^2.1.9",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "astro": "^4.13.3",
+    "astro-portabletext": "^0.10.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sanity": "^3.57.0",
+    "sanity-plugin-singleton-tools": "^1.1.0",
     "typescript": "^5.5.4"
   }
 }

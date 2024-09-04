@@ -1,9 +1,12 @@
 ---
+import { getBookingLink } from "../utils/homePageContent";
+
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+const bookingLink = await getBookingLink();
 ---
 
 <!doctype html>
@@ -37,11 +40,7 @@ const { title } = Astro.props;
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:label1" content="Est. reading time" />
     <meta name="twitter:data1" content="3 minutes" />
-    <link
-      rel="icon"
-      type="image/webp"
-      href="/favicon.webp"
-    />
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
     <!-- Bootstrap CSS -->
     <link
       href="/wp-content/themes/bossnailspanorman/assets/css/preloader.css"
@@ -532,10 +531,7 @@ const { title } = Astro.props;
   <body class="sk__homepage sk__home-combo-slider dark-shade-1-bg">
     <div id="notification"></div>
     <slot />
-    <a
-      href="https://www.lldtek.org/salon/appt/VjFaZk1UQTBPRGs9"
-      target="_blank"
-      id="book_online"
+    <a href={bookingLink} target="_blank" id="book_online"
       ><img
         src="/wp-content/themes/bossnailspanorman/assets/images/book_online.webp"
       /></a

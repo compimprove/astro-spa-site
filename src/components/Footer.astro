@@ -1,3 +1,9 @@
+---
+import { getHomePageContent } from "../utils/homePageContent";
+
+const homePageContent = await getHomePageContent();
+---
+
 <footer class="position-relative footer_background">
   <div class="footer-background-container sk__absolute">
     <div class="sk__gradient-background-tint footer-background sk__absolute">
@@ -7,11 +13,7 @@
     <div class="row footer-top">
       <div class="col-12 col-sm-6 top-footer-logo">
         <a href="/"
-          ><a href="/"
-            ><img
-              src="/logo.png"
-              alt="Site logo in the footer."
-            /></a
+          ><a href="/"><img src="/logo.png" alt="Site logo in the footer." /></a
           ></a
         >
       </div>
@@ -35,15 +37,15 @@
         <h5>Contact</h5>
         <p class="p-v2 mw-440">
           <span
-            ><strong>Address:</strong> 608 50th Street Charleston, WV 25304</span
+            ><strong>Address:</strong> 608 50th Street, Charleston, WV 25304</span
           ><br />
           <span
             ><strong>Phone:</strong><a
               href="tel:3047673121"
               style="color: #000"
             >
-              304.767.3121</a
-            ></span
+              {homePageContent.phoneNumber}
+            </a></span
           ><br />
         </p>
       </div>
@@ -54,20 +56,18 @@
         <div class="col-md-6">
           <ul>
             <li>
-              <a href="/" class="footer-main-links gradient-links"
-                >Home</a
-              >
+              <a href="/" class="footer-main-links gradient-links">Home</a>
             </li>
             <li>
               <a href="/services" class="footer-main-links gradient-links"
                 >Services</a
               >
             </li>
-            <!-- <li>
-              <a href="/promotion" class="footer-main-links gradient-links"
-                >Promotion</a
+            <li>
+              <a href="#promotion" class="footer-main-links gradient-links"
+                >What's New</a
               >
-            </li> -->
+            </li>
           </ul>
         </div>
         <div class="col-md-6">
@@ -85,7 +85,7 @@
             </li>
             <li>
               <a
-                href="https://www.lldtek.org/salon/appt/VjFaZk1UQTBPRGs9"
+                href={homePageContent.bookingLink}
                 class="footer-main-links gradient-links"
                 target="_blank">Book Online</a
               >
@@ -143,11 +143,8 @@
       <div
         class="col-xs-12 col-sm-6 col-md-4 order-sm-2 order-md-3 text-center text-sm-end"
       >
-        <a class="footer-bottom-right-links" href="/" target="_blank"
-          >Home</a
-        >
-        <a
-          class="footer-bottom-right-links" href="/services" target="_blank"
+        <a class="footer-bottom-right-links" href="/" target="_blank">Home</a>
+        <a class="footer-bottom-right-links" href="/services" target="_blank"
           >Services</a
         >
         <a class="footer-bottom-right-links" href="/contact" target="_blank"
