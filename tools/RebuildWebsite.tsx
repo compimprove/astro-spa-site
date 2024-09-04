@@ -15,7 +15,7 @@ export const RebuildWebsite = () => {
         // TODO: Implement publish logic
         try {
           await fetch(
-            "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/7bb8a380-76f2-402a-a1ba-206f51857d6c",
+            "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/653f9919-2272-4378-a734-20e6cdd452f2",
             {
               method: "POST",
             }
