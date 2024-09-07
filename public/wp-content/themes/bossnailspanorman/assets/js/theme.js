@@ -211,7 +211,6 @@ $(document).ready(function(){
 	});
 	// Off Canvas Menu - add class to body when menu opens
 	$( '.hc-nav-trigger' ).on( 'click', function( event ) {
-		$( 'body' ).toggleClass( 'sk__nav-open' );
 	});
 
 	/**
