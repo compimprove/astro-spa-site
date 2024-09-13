@@ -1,5 +1,7 @@
 ---
+import { getImage } from "astro:assets";
 import { getBookingLink } from "../utils/homePageContent";
+import ogImage from "../images/slider/og.png";
 
 interface Props {
   title: string;
@@ -7,6 +9,11 @@ interface Props {
 
 const { title } = Astro.props;
 const bookingLink = await getBookingLink();
+
+const ogImageOptimized = await getImage({
+  src: ogImage,
+  inferSize: true,
+});
 ---
 
 <!doctype html>
@@ -36,7 +43,7 @@ const bookingLink = await getBookingLink();
       property="article:modified_time"
       content="2023-08-28T04:13:17+00:00"
     />
-    <meta property="og:image" content="/slider/1-mobile2.png" />
+    <meta property="og:image" content={ogImageOptimized.src} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:label1" content="Est. reading time" />
     <meta name="twitter:data1" content="3 minutes" />
@@ -537,21 +544,16 @@ const bookingLink = await getBookingLink();
       /></a
     >
     <div class="groupfbye">
-      <a
-        href="https://www.facebook.com"
-        target="_blank"><i class="fa fa-facebook"></i></a
+      <a href="https://www.facebook.com" target="_blank"
+        ><i class="fa fa-facebook"></i></a
       >
       <div class="line3"></div>
-      <a href="https://yelp.com" target="_blank"
-        ><i class="fa fa-yelp"></i></a
-      >
+      <a href="https://yelp.com" target="_blank"><i class="fa fa-yelp"></i></a>
       <div class="line3"></div>
       <!--<a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
 					<div class="line3"> </div>-->
-      <a
-        href="https://www.google.com"
-        target="_blank"
-        class="facebookbar"><i class="fa fa-google"></i></a
+      <a href="https://www.google.com" target="_blank" class="facebookbar"
+        ><i class="fa fa-google"></i></a
       >
     </div>
 
