@@ -96,12 +96,16 @@ const bookingLink = await getBookingLink();
 </style>
 <script is:inline>
   function scrollToElement(elementId) {
+    if (window.location.pathname !== "/") {
+      window.location.href = "/" + "#" + elementId;
+      return;
+    }
     const element = document.getElementById(elementId);
-    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-    
+    const elementPosition =
+      element.getBoundingClientRect().top + window.scrollY;
+
     window.scrollTo({
       top: elementPosition,
     });
-
   }
 </script>
