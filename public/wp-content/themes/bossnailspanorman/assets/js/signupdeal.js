@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    fLoadSignUpDeal();
+    // fLoadSignUpDeal();
 
     function fLoadSignUpDeal() {
 

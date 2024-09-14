@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    fLoadNotification();
+    // fLoadNotification();
 
     /*Load deal*/
     function fLoadNotification() {

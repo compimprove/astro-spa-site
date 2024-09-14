@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    fLoadFlyer();
+    // fLoadFlyer();
 
     function fLoadFlyer() {
         var sID = 0;
