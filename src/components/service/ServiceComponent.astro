@@ -4,6 +4,7 @@ interface Props {
   serviceTitle: string;
   images?: string[];
   isComingSoon?: boolean;
+  content?: string;
   serviceList: {
     name: string;
     price?: string;
@@ -11,7 +12,7 @@ interface Props {
   }[];
 }
 
-let { serviceList, serviceTitle, images, id, isComingSoon } = Astro.props;
+let { serviceList, serviceTitle, images, id, isComingSoon, content } = Astro.props;
 if (images.length === 0)
   images = [
     "/wp-content/themes/bossnailspanorman/assets/images/services/1.webp",
@@ -30,7 +31,7 @@ if (images.length === 0)
         {images.map((image) => <img src={image} />)}
           </div>
         </div>
-        <div class="col-lg-8 col-md-8 col-sm-12 grouprow">
+        <div class="col-lg-8 col-md-8 col-sm-12 grouprow" style="margin-top: -20px;">
           {
             serviceList.map((service) => (
               <div class="row_svpage">
@@ -52,5 +53,22 @@ if (images.length === 0)
         </div>
       </div>
     )}
+    {
+      serviceList.length === 0 && !isComingSoon && (
+      <div class="col-lg-4 col-md-4 servicesimg">
+      <div class="servicesimg">
+          {images.map((image) => <img src={image} />)}
+        </div>
+      </div>
+        <div class="col-lg-8 col-md-8 col-sm-12 grouprow">
+     <div
+          style="color: rgb(67, 67, 67)"
+          set:html={content}
+        />
+        </div> 
+    
+   
+      )
+    }
   </div>
 </div>

@@ -57,7 +57,7 @@ import Layout from "../layouts/Layout.astro";
                       class="position-relative sk__image-back-cover services-bg-page"
                     >
                       <div class="container px-3">
-                        <div>
+                        <>
                           <ServiceComponent
                             id="1"
                             serviceTitle="Acrylic Nail"
@@ -217,19 +217,50 @@ import Layout from "../layouts/Layout.astro";
                               },
                             ]}
                           />
+                          <ServiceComponent
+                            id="6"
+                            serviceTitle="Eyelashes Extension"
+                            images={["/service-images/eyelashes.png"]}
+                            serviceList={[
+                              {
+                                name: "Cluster lashes",
+                              },
+                              {
+                                name: "Kim k Lashes",
+                              },
+                              {
+                                name: "Classic",
+                              },
+                              {
+                                name: "Hybrid",
+                              },
+                              {
+                                name: "Volume",
+                              },
+                              {
+                                name: "Lash tint/lift",
+                              },
+                            ]}
+                          />
+                          <ServiceComponent
+                            id="8"
+                            serviceTitle="Facial"
+                            images={["/service-images/facial.png"]}
+                            serviceList={[
+                              {
+                                name: "Pamper Me Please! The Ultimate in Relaxation 60min",
+                                note: "If you are in serious need of stress relief and want the ultimate in pampering, I suggest the Pamper Me Please! option. You'll be sure to feel like a new person after receiving the massage, facial and reflexology treatments. That includes an extra treatment mask and extended shoulder and arm massage you'll receive during this ultimate pampering experience.",
+                              },
+                              {
+                                name: "Relaxing facial massage 35 min",
+                                note: "This treatment relaxing facial massage consists of 3 steps: cleansing, exfoliating, and moisturizing. Scalp and facial massage is performed throughout the procedure. Next a flowing relaxing massage smooths away tension from aching muscles thereby improving circulation and relieving stress. Your massage brings about relaxation and peace of mind, body and soul.",
+                              },
+                            ]}
+                          />
                           <div
-                            class="d-flex flex-column flex-md-row gap-5 my-5"
+                            class="d-flex flex-column flex-md-row gap-5 my-5 justify-content-center"
                           >
-                            <div class="w-100">
-                              <ServiceComponent
-                                id="6"
-                                isComingSoon={true}
-                                serviceTitle="Eyelashes Extension"
-                                images={["/service-images/eyelashes.png"]}
-                                serviceList={[]}
-                              />
-                            </div>
-                            <div class="w-100">
+                            <div>
                               <ServiceComponent
                                 id="7"
                                 isComingSoon={true}
@@ -239,61 +270,49 @@ import Layout from "../layouts/Layout.astro";
                               />
                             </div>
                           </div>
-                          <div
-                            class="d-flex flex-column flex-md-row gap-5 my-5 justify-content-center"
-                          >
-                            <div class="">
-                              <ServiceComponent
-                                id="8"
-                                isComingSoon={true}
-                                serviceTitle="Facial"
-                                images={["/service-images/facial.png"]}
-                                serviceList={[]}
-                              />
-                            </div>
-                          </div>
-                        </div>
+                        </>
                       </div>
                     </section>
                   </div>
                 </div>
-              </div>
-              <div
-                id="pg-gb11-66bb66fe2f54d-1"
-                class="panel-grid panel-no-style"
-              >
-                <div id="pgc-gb11-66bb66fe2f54d-1-0" class="panel-grid-cell">
-                  <div
-                    id="panel-gb11-66bb66fe2f54d-1-0-0"
-                    class="widget_text so-panel widget widget_custom_html panel-first-child panel-last-child"
-                    data-index="1"
-                  >
-                    <div class="textwidget custom-html-widget">
-                      <script>
-                        var element = document.getElementById("mLinkServices");
-                        element.classList.add("selected");
-                      </script>
+                <div
+                  id="pg-gb11-66bb66fe2f54d-1"
+                  class="panel-grid panel-no-style"
+                >
+                  <div id="pgc-gb11-66bb66fe2f54d-1-0" class="panel-grid-cell">
+                    <div
+                      id="panel-gb11-66bb66fe2f54d-1-0-0"
+                      class="widget_text so-panel widget widget_custom_html panel-first-child panel-last-child"
+                      data-index="1"
+                    >
+                      <div class="textwidget custom-html-widget">
+                        <script>
+                          var element =
+                            document.getElementById("mLinkServices");
+                          element.classList.add("selected");
+                        </script>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            <section class="entry-meta"></section>
           </div>
-          <section class="entry-meta"></section>
         </section>
+        <!--Wrapper-->
+        <!-- Footer
+                  ================================================== -->
+        <Footer />
+
+        <!-- Helper div for inserting before scripts
+                  ================================================== -->
+        <div class="sk__body-end"></div>
+
+        <!-- /#smooth-content -->
+
+        <!-- /#smooth-wrapper -->
       </article>
-      <!--Wrapper-->
-      <!-- Footer
-                  ================================================== -->
-      <Footer />
-
-      <!-- Helper div for inserting before scripts
-                  ================================================== -->
-      <div class="sk__body-end"></div>
-
-      <!-- /#smooth-content -->
-
-      <!-- /#smooth-wrapper -->
     </div>
   </main>
 </Layout>
