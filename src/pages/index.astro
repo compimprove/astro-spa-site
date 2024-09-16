@@ -15,9 +15,16 @@ import sliderImage3 from "../images/slider/3.jpg";
 import sliderImage1Mobile from "../images/slider/1-mobile.png";
 import sliderImage2Mobile from "../images/slider/2-mobile.jpeg";
 import sliderImage3Mobile from "../images/slider/3-mobile.jpeg";
+import { urlFor } from "../utils/image";
+import { getImage } from "astro:assets";
 
 const homePageContent = await getHomePageContent();
-const { news, hostParty, phoneNumber } = homePageContent;
+const { news, hostParty, phoneNumber, whatsNewImage } = homePageContent;
+const whatsNewImageOptimized = await getImage({
+  src: urlFor(whatsNewImage).url(),
+  inferSize: true,
+  format: "webp",
+});
 ---
 
 <Layout title="Welcome Astro.">
@@ -402,6 +409,7 @@ const { news, hostParty, phoneNumber } = homePageContent;
                                 class="col sk__laptop-infos-container sk__flex-center-y sk__laptop-text-col"
                               >
                                 <div class="sk__laptop-mockup-subcontainer">
+                                  <img src={whatsNewImageOptimized.src} />
                                 </div>
                                 <div class="sk__laptop-infos-subcontainer">
                                   <div class="sk__rectangles-laptop">

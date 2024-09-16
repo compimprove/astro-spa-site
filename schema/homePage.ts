@@ -9,6 +9,7 @@ export interface HomePageContent {
   hostParty: PortableTextBlock[];
   bookingLink: string;
   phoneNumber: string;
+  whatsNewImage: ImageAsset;
 }
 
 export const homePageSchema = defineType({
@@ -16,6 +17,11 @@ export const homePageSchema = defineType({
   title: "Home Page",
   type: "document",
   fields: [
+    defineField({
+      name: "whatsNewImage",
+      title: "What's New Image",
+      type: "image",
+    }),
     defineField({
       name: "news",
       title: "What's New",

@@ -7866,10 +7866,7 @@ a.sk__feature,
   position: absolute;
   top: 0px;
   left: 0;
-  width: 1000px;
-  height: 1000px;
-  background-image: url(../images/egift.webp);
-  background-size: cover;
+  width: 800px;
 }
 @media all and (min-width: 1660px) {
   /* custom */
