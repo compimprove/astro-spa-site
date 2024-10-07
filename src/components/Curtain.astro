@@ -4,6 +4,10 @@ import curtainImageA from "../images/preload/a.png";
 import curtainImageB from "../images/preload/b.png";
 import curtainImageC from "../images/preload/c.png";
 
+import { loadEnv } from "vite";
+const { PUBLIC_ENV } = loadEnv(import.meta.env.MODE, process.cwd(), "");
+const isPreview = PUBLIC_ENV === "Preview";
+
 const curtainImageAOptimized = await getImage({
   src: curtainImageA,
   inferSize: true,
@@ -20,23 +24,24 @@ const curtainImageCOptimized = await getImage({
 });
 ---
 
-<section class="sk__master-curtain">
-  <div
-    class="mcurtain mcurtain-left"
-    style={`background-image: url(${curtainImageAOptimized.src});`}
-  >
-  </div>
-  <div
-    class="mcurtain mcurtain-center"
-    style={`background-image: url(${curtainImageBOptimized.src});`}
-  >
-  </div>
-  <div
-    class="mcurtain mcurtain-right"
-    style={`background-image: url(${curtainImageCOptimized.src});`}
-  >
-  </div>
-</section>
+{
+  isPreview ? null : (
+    <section class="sk__master-curtain">
+      <div
+        class="mcurtain mcurtain-left"
+        style={`background-image: url(${curtainImageAOptimized.src});`}
+      />
+      <div
+        class="mcurtain mcurtain-center"
+        style={`background-image: url(${curtainImageBOptimized.src});`}
+      />
+      <div
+        class="mcurtain mcurtain-right"
+        style={`background-image: url(${curtainImageCOptimized.src});`}
+      />
+    </section>
+  )
+}
 
 <style>
   .mcurtain-left {
