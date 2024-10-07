@@ -3,9 +3,8 @@ import { getImage } from "astro:assets";
 import curtainImageA from "../images/preload/a.png";
 import curtainImageB from "../images/preload/b.png";
 import curtainImageC from "../images/preload/c.png";
+const PUBLIC_ENV = import.meta.env.PUBLIC_ENV;
 
-import { loadEnv } from "vite";
-const { PUBLIC_ENV } = loadEnv(import.meta.env.MODE, process.cwd(), "");
 const isPreview = PUBLIC_ENV === "Preview";
 
 const curtainImageAOptimized = await getImage({
