@@ -5,6 +5,10 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import ServiceComponent from "../components/service/ServiceComponent.astro";
 import Layout from "../layouts/Layout.astro";
+import { getServices } from "../utils/homePageContent";
+
+const services = await getServices();
+let id = 0;
 ---
 
 <Layout title="Services">
@@ -58,217 +62,31 @@ import Layout from "../layouts/Layout.astro";
                     >
                       <div class="container px-3">
                         <>
-                          <ServiceComponent
-                            id="1"
-                            serviceTitle="Acrylic Nail"
-                            images={["/service-images/acrylic-nail.png"]}
-                            serviceList={[
-                              {
-                                name: "Acrylic White Tip New Set",
-                              },
-                              {
-                                name: "Acrylic Gel Color New Set",
-                              },
-                              {
-                                name: "Pink & White New Set",
-                              },
-                              {
-                                name: "Color French or Sparkle Fading",
-                              },
-                              {
-                                name: "Acrylic Ombre New Set",
-                              },
-                            ]}
-                          />
-                          <ServiceComponent
-                            id="2"
-                            serviceTitle="Dipping Powder"
-                            images={["/service-images/dipping.png"]}
-                            serviceList={[
-                              {
-                                name: "Dipping Powder on nature nails",
-                              },
-                              {
-                                name: "Dipping Powder Ombre",
-                              },
-                              {
-                                name: "Full Set Dipping Powder",
-                              },
-                              {
-                                name: "Dipping French",
-                              },
-                            ]}
-                          />
-                          <ServiceComponent
-                            id="3"
-                            serviceTitle="Manicure & Pedicure"
-                            images={[
-                              // "/service-images/pedicure.png",
-                              "/service-images/pedicure2.png",
-                            ]}
-                            serviceList={[
-                              {
-                                name: "The Pure Organic Tropical Pedicure",
-                                note: "Comes with fresh Orange, Lemon, Mango, Cucumber, Hot Stone, Hot Paraffin Wax...",
-                              },
-                              {
-                                name: "Volcano Spa with CBD Pedicure",
-                                note: "Scents: Gold, Hot Lava, Beach Paradise, Rose Gold, Fuji Pear, Spearmint.",
-                              },
-                              {
-                                name: "Volcano Spa Pedicure",
-                                note: "Scents: Lavender, Tropical, Honey Pear, Green Tea, Jasmine, Orange, Honey Suckle, Raspberry & Plum, Lemongrass & Ginger, Strawberry, Mango, Lemon, Romance",
-                              },
-                              {
-                                name: "Lavish Collagen Spa Pedicure",
-                                note: "Comes with the Collagen Spa Pedicure's system and warm Collagen Shocks.",
-                              },
-                              {
-                                name: "Deluxe Pedicure",
-                                note: "Come with Sea Salt or Sugar Scrub, callus treatment, lotion and hot towel.",
-                              },
-                              {
-                                name: "Classic Pedicure",
-                                note: "Come with toe nails trim, lotion, hot towel (does not include the callus treatment)",
-                              },
-                              {
-                                name: "Princess Pedicure (Kid spa pedicure)",
-                                note: "Includes all the benefits of a classic pedicure",
-                              },
-                            ]}
-                          />
-                          <ServiceComponent
-                            id="4"
-                            serviceTitle="Waxing & Tinting"
-                            images={[
-                              "/service-images/waxing1.png",
-                              // "/service-images/waxing2.png",
-                            ]}
-                            serviceList={[
-                              {
-                                name: "Eyebrows",
-                              },
-                              {
-                                name: "Eyebrows Tinting",
-                              },
-                              {
-                                name: "Lips",
-                              },
-                              {
-                                name: "Chin",
-                              },
-                              {
-                                name: "Side",
-                              },
-                              {
-                                name: "Whole Face",
-                              },
-                              {
-                                name: "Half/Full Legs",
-                              },
-                              {
-                                name: "Half/Full Arms",
-                              },
-                              {
-                                name: "Under Arms",
-                              },
-                              {
-                                name: "Back or chest",
-                              },
-                              {
-                                name: "Bikini",
-                              },
-                              {
-                                name: "Brazilian",
-                              },
-                            ]}
-                          />
-                          <ServiceComponent
-                            id="5"
-                            serviceTitle="Additional Services"
-                            images={["/service-images/additional-service.jpg"]}
-                            serviceList={[
-                              {
-                                name: "Take-off with Services",
-                              },
-                              {
-                                name: "Take-off without Services",
-                              },
-                              {
-                                name: "French/Color Tips",
-                              },
-                              {
-                                name: "Nail Repair",
-                              },
-                              {
-                                name: "Gel Polish",
-                              },
-                              {
-                                name: "Polish Change on Hands/Toes",
-                              },
-                              {
-                                name: "Nail Design",
-                              },
-                              {
-                                name: "Long Nails, Shape Nails Almond, Coffin, Stilettos",
-                              },
-                              {
-                                name: "Add on Collagen Glove/Shocks Paraffin wax",
-                              },
-                            ]}
-                          />
-                          <ServiceComponent
-                            id="6"
-                            serviceTitle="Eyelashes Extension"
-                            images={["/service-images/eyelashes.png"]}
-                            serviceList={[
-                              {
-                                name: "Cluster lashes",
-                              },
-                              {
-                                name: "Kim k Lashes",
-                              },
-                              {
-                                name: "Classic",
-                              },
-                              {
-                                name: "Hybrid",
-                              },
-                              {
-                                name: "Volume",
-                              },
-                              {
-                                name: "Lash tint/lift",
-                              },
-                            ]}
-                          />
-                          <ServiceComponent
-                            id="8"
-                            serviceTitle="Facial"
-                            images={["/service-images/facial.png"]}
-                            serviceList={[
-                              {
-                                name: "Pamper Me Please! The Ultimate in Relaxation 60min",
-                                note: "If you are in serious need of stress relief and want the ultimate in pampering, I suggest the Pamper Me Please! option. You'll be sure to feel like a new person after receiving the massage, facial and reflexology treatments. That includes an extra treatment mask and extended shoulder and arm massage you'll receive during this ultimate pampering experience.",
-                              },
-                              {
-                                name: "Relaxing facial massage 35 min",
-                                note: "This treatment relaxing facial massage consists of 3 steps: cleansing, exfoliating, and moisturizing. Scalp and facial massage is performed throughout the procedure. Next a flowing relaxing massage smooths away tension from aching muscles thereby improving circulation and relieving stress. Your massage brings about relaxation and peace of mind, body and soul.",
-                              },
-                            ]}
-                          />
+                          {
+                            services
+                              .filter((service) => !service.isComingSoon)
+                              .map((service, index) => (
+                                <ServiceComponent
+                                  data={service}
+                                  id={(id++).toString()}
+                                />
+                              ))
+                          }
                           <div
-                            class="d-flex flex-column flex-md-row gap-5 my-5 justify-content-center"
+                            class="d-flex flex-column flex-md-row gap-5 my-5 justify-content-center flex-wrap"
                           >
-                            <div>
-                              <ServiceComponent
-                                id="7"
-                                isComingSoon={true}
-                                serviceTitle="Massage"
-                                images={["/service-images/massage.png"]}
-                                serviceList={[]}
-                              />
-                            </div>
+                            {
+                              services
+                                .filter((service) => service.isComingSoon)
+                                .map((service, index) => (
+                                  <div class="col-md-5 col-lg-5">
+                                    <ServiceComponent
+                                      id={(id++).toString()}
+                                      data={service}
+                                    />
+                                  </div>
+                                ))
+                            }
                           </div>
                         </>
                       </div>

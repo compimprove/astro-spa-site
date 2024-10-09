@@ -1,34 +1,37 @@
 ---
+import { getImage } from 'astro:assets';
+import type { Service } from '../../../schema/service';
+import { urlFor } from '../../utils/image';
+import { PortableText } from 'astro-portabletext';
+
 interface Props {
   id: string;
-  serviceTitle: string;
-  images?: string[];
-  isComingSoon?: boolean;
-  content?: string;
-  serviceList: {
-    name: string;
-    price?: string;
-    note?: string;
-  }[];
+  data: Service
 }
 
-let { serviceList, serviceTitle, images, id, isComingSoon, content } = Astro.props;
-if (images.length === 0)
-  images = [
-    "/wp-content/themes/bossnailspanorman/assets/images/services/1.webp",
-    // "/wp-content/themes/bossnailspanorman/assets/images/services/2.webp",
-    // "/wp-content/themes/bossnailspanorman/assets/images/services/3.webp",
-  ];
+let { serviceList = [], title: serviceTitle, image,  isComingSoon } = Astro.props.data;
+const id = Astro.props.id;
+
+let imageUrl
+if (!image) {
+  imageUrl = "/wp-content/themes/bossnailspanorman/assets/images/services/1.webp"
+} else {
+  imageUrl =(await getImage({
+  src: urlFor(image).url(),
+  inferSize: true,
+  format: "webp",
+})).src;
+}
 ---
 
 <div class="group_services divseracti" id={`seracti_${serviceTitle}`}>{serviceTitle}</div>
 <div class="servicesbox bg_services services_active" id={`services_${id}`}>
   <div class="servicesgroup">
     {
-      serviceList.length > 0 && (
+      serviceList?.length > 0 && (
       <div class="col-lg-4 col-md-4 servicesimg">
       <div class="servicesimg">
-        {images.map((image) => <img src={image} />)}
+        <img src={imageUrl} />
           </div>
         </div>
         <div class="col-lg-8 col-md-8 col-sm-12 grouprow" style="margin-top: -20px;">
@@ -37,7 +40,9 @@ if (images.length === 0)
               <div class="row_svpage">
                 <div class="row_name text-color-sv">{service.name}</div>
                 {service.price && <div class="price">{service.price}</div>}
-                {service.note && <div class="row_note">{service.note}</div>}
+                {service.note && <div class="row_note">
+                  <PortableText value={service.note} />
+                  </div>}
               </div>
             ))
           }
@@ -45,30 +50,39 @@ if (images.length === 0)
       )
     }
     {
-      serviceList.length === 0 && isComingSoon && (
+      serviceList?.length === 0 && isComingSoon && (
       <div class="w-100 d-flex justify-content-center position-relative">
-        <img class="img-fluid" src={images[0]} alt={serviceTitle} />
+        <img class="img-fluid" src={imageUrl} alt={serviceTitle} />
         <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
           <p class="text-white fs-3 fw-bold" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Coming Soon</p>
         </div>
       </div>
     )}
     {
-      serviceList.length === 0 && !isComingSoon && (
+      serviceList?.length === 0 && !isComingSoon && (
       <div class="col-lg-4 col-md-4 servicesimg">
       <div class="servicesimg">
-          {images.map((image) => <img src={image} />)}
+          <img src={imageUrl} />
         </div>
       </div>
         <div class="col-lg-8 col-md-8 col-sm-12 grouprow">
-     <div
-          style="color: rgb(67, 67, 67)"
-          set:html={content}
-        />
         </div> 
-    
-   
       )
     }
   </div>
 </div>
+
+<style is:global>
+.row_note {
+  p {
+    color: #888;
+    font-size: 12pt;
+    margin-top: 5px;
+    text-transform: none;
+    line-height: 25px;
+    font-weight: 400;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+</style>

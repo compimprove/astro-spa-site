@@ -10,6 +10,15 @@ export interface HomePageContent {
   bookingLink: string;
   phoneNumber: string;
   whatsNewImage: ImageAsset;
+  services: ServiceContent[];
+}
+
+export interface ServiceContent {
+  enabled: boolean;
+  title: string;
+  description: PortableTextBlock[];
+  image: ImageAsset;
+  link: string;
 }
 
 export const homePageSchema = defineType({
@@ -41,6 +50,61 @@ export const homePageSchema = defineType({
         {
           type: "block",
           styles: [{ title: "Normal", value: "normal" }],
+        },
+      ],
+    }),
+    defineField({
+      name: "services",
+      title: "Services",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "title",
+              title: "Title",
+              type: "string",
+            }),
+            defineField({
+              name: "enabled",
+              title: "Enabled",
+              type: "boolean",
+            }),
+            defineField({
+              name: "description",
+              title: "Description",
+              type: "array",
+              of: [
+                {
+                  type: "block",
+                  styles: [{ title: "Normal", value: "normal" }],
+                },
+              ],
+            }),
+            defineField({
+              name: "image",
+              title: "Image",
+              type: "image",
+            }),
+            defineField({
+              name: "link",
+              title: "Link",
+              type: "url",
+            }),
+          ],
+          preview: {
+            select: {
+              title: "title",
+              enabled: "enabled",
+              media: "image",
+            },
+            prepare: ({ title, enabled, media }) => ({
+              title: title,
+              subtitle: enabled ? "Enabled" : "Disabled",
+              media: media,
+            }),
+          },
         },
       ],
     }),

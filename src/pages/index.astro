@@ -252,24 +252,13 @@ const whatsNewImageOptimized = await getImage({
                             <div
                               class="row sk__iconboxes-wrapper text-center sk__flex-center-x"
                             >
-                              <ServiceSquare
-                                title="Manicure"
-                                description="Be more beautiful and stylish with our manicure service. All of the staff are well-trained, careful and whole-hearted. Take the time from your busy schedule to help your hands and nails look their best."
-                                image="services/2.png"
-                                link="/services"
-                              />
-                              <ServiceSquare
-                                title="Pedicure"
-                                description="Indulge your feet with our exclusive spa pedicures. Our pedicure chairs are noiseless and pipe less offering the best combination of relaxation & sanitation. We'll make you feel like royalty!"
-                                image="/services/3.png"
-                                link="/services"
-                              />
-                              <ServiceSquare
-                                title="Waxing"
-                                description="We understand that waxing is personal, so we're committed to making you comfortable, both through friendly, straightforward service and the very best waxing products available."
-                                image="/services/1.png"
-                                link="/services"
-                              />
+                              {
+                                homePageContent.services
+                                  .filter((service) => service.enabled)
+                                  .map((service) => (
+                                    <ServiceSquare data={service} />
+                                  ))
+                              }
                             </div>
                             <!-- <ServiceSquare
                                 title="Facial"

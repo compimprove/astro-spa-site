@@ -1,17 +1,25 @@
 ---
+import { getImage } from "astro:assets";
+import type { ServiceContent } from "../../schema/homePage";
+import { urlFor } from "../utils/image";
+import { PortableText } from "astro-portabletext";
+
 interface Props {
-  title: string;
-  description: string;
-  image: string;
-  link: string;
+  data: ServiceContent;
 }
-let { title, description, image, link } = Astro.props;
+let { title, description, image, link = "/services" } = Astro.props.data;
+
+const imageOptimized = await getImage({
+  src: urlFor(image).url(),
+  inferSize: true,
+  format: "webp",
+});
 ---
 
 <div class="sk__iconbox-services1">
   <div class="sk__iconbox">
     <a class="services_home" href={link}>
-      <img decoding="async" src={image} />
+      <img decoding="async" src={imageOptimized.src} />
     </a>
     <a class="sk__iconbox-text-link gradient-links-bright" href={link}>
       <h5>{title}</h5>
@@ -22,9 +30,7 @@ let { title, description, image, link } = Astro.props;
         src="/wp-content/themes/bossnailspanorman/assets/images/services-home/line-home.png"
       />
     </div>
-    <p>
-      {description}
-    </p>
+    <PortableText value={description} />
     <div class="bottom-wrapper">
       <a class="btn btn-outline-gold" href={link} role="button">Our Services</a>
     </div>

@@ -21,9 +21,7 @@ const structure = (S: StructureBuilder, context: StructureResolverContext) =>
     .title("LavishNail")
     .items([
       // Create a list item for each singleton document in your schema that links directly to a document view
-      ...singletonDocumentListItems({ S, context }).filter(
-        (item) => item.getId() !== "galleryImage"
-      ),
+      ...singletonDocumentListItems({ S, context }),
       // Create a list item for a specific singleton
       S.divider(),
       // Filter singleton documents out of the default S.documentTypeListItems() to prevent them from being rendered as lists or as duplicates
