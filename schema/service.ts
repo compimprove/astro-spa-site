@@ -4,6 +4,10 @@ import {
   type ImageAsset,
   type PortableTextBlock,
 } from "sanity";
+import {
+  orderRankField,
+  orderRankOrdering,
+} from "@sanity/orderable-document-list";
 
 export interface Service {
   title: string;
@@ -27,6 +31,7 @@ export const serviceSchema = defineType({
       title: "Title",
       type: "string",
     }),
+    orderRankField({ type: "service" }),
     defineField({
       name: "image",
       title: "Image",
@@ -80,4 +85,24 @@ export const serviceSchema = defineType({
       ],
     }),
   ],
+  preview: {
+    select: {
+      title: "title",
+      enable: "enable",
+      media: "image",
+      isComingSoon: "isComingSoon",
+    },
+    prepare({ title, enable, media, isComingSoon }) {
+      const subtitle = enable
+        ? isComingSoon
+          ? "Coming Soon"
+          : "Enabled"
+        : "Disabled";
+      return {
+        title,
+        subtitle,
+        media,
+      };
+    },
+  },
 });

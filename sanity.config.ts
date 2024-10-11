@@ -15,6 +15,7 @@ import {
   filteredDocumentListItems,
 } from "sanity-plugin-singleton-tools";
 import { RebuildWebsite } from "./tools/RebuildWebsite";
+import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
 
 const structure = (S: StructureBuilder, context: StructureResolverContext) =>
   S.list()
@@ -25,7 +26,12 @@ const structure = (S: StructureBuilder, context: StructureResolverContext) =>
       // Create a list item for a specific singleton
       S.divider(),
       // Filter singleton documents out of the default S.documentTypeListItems() to prevent them from being rendered as lists or as duplicates
-      ...filteredDocumentListItems({ S, context }),
+      orderableDocumentListDeskItem({
+        type: "service",
+        S,
+        context,
+        title: "Services",
+      }),
     ]);
 
 export default defineConfig({

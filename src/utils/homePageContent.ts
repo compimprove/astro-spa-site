@@ -11,7 +11,7 @@ export async function getHomePageContent(): Promise<HomePageContent> {
 
 export async function getServices(): Promise<Service[]> {
   return await sanityClient.fetch(
-    groq`*[_type == "service" && enable == true]`
+    groq`*[_type == "service" && enable == true] | order(orderRank)`
   );
 }
 
