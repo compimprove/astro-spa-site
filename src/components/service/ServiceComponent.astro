@@ -38,9 +38,11 @@ if (!image) {
           {
             serviceList.map((service) => (
               <div class="row_svpage">
-                <div class="row_name text-color-sv">{service.name}</div>
-                {service.price && <div class="price">{service.price}</div>}
-                {service.note && <div class="row_note">
+                <div class="d-flex justify-content-between">
+                  <div class="row_name text-color-sv">{service.name}</div>
+                  {service.price && <div class="price">{service.price}</div>}
+                </div>
+                {service.note && <div class="row_note" style="max-width: 700px;">
                   <PortableText value={service.note} />
                   </div>}
               </div>
